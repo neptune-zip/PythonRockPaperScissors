@@ -1,4 +1,4 @@
-from python.src.DataSource.RockConstants import RockConstants
+from src.DataSource.RockConstants import RockConstants
 class ReadFileToList:
 
     filePath = RockConstants.filePrefix + "log/"

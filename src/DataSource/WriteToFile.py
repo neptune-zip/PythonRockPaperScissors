@@ -1,4 +1,4 @@
-from python.src.DataSource.RockConstants import RockConstants
+from src.DataSource.RockConstants import RockConstants
 class WriteToFile:
     # Here will be the instance stored.
     file = ""

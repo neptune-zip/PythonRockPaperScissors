@@ -1,4 +1,4 @@
-from python.src.Display.Output import Output
+from src.Display.Output import Output
 
 class OutputTest(Output):
 

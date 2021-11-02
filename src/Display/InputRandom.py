@@ -1,6 +1,6 @@
-from python.src.Display.Input import Input
+from src.Display.Input import Input
 from random import randint
-from python.src.DataSource.WriteToFile import WriteToFile
+from src.DataSource.WriteToFile import WriteToFile
 
 class InputRandom(Input):
 

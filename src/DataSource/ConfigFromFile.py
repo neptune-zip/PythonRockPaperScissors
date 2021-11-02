@@ -1,5 +1,5 @@
-from python.src.DataSource.Config import Config
-from python.src.DataSource.RockConstants import RockConstants
+from src.DataSource.Config import Config
+from src.DataSource.RockConstants import RockConstants
 import os
 
 class ConfigFromFile(Config):

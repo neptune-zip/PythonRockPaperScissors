@@ -1,9 +1,8 @@
 from random import randint
-from python.src.Display.InputConsole import InputConsole
-from python.src.Display.OutputConsole import OutputConsole
-from python.src.DataSource.ConfigFromFile import ConfigFromFile
-from python.src.DataSource.ConfigFromStub import ConfigFromStub
-from python.src.Display.InputRandom import InputRandom
+from src.Display.InputConsole import InputConsole
+from src.Display.OutputConsole import OutputConsole
+from src.DataSource.ConfigFromFile import ConfigFromFile
+from src.Display.InputRandom import InputRandom
 
 class RockPaperScissors:
 
