@@ -1,11 +1,11 @@
 import unittest
-from python.src.DataSource.ConfigFromStub import ConfigFromStub
-from python.src.DataSource.ConfigFromFile import ConfigFromFile
+from src.DataSource.ConfigFromStub import ConfigFromStub
+from src.DataSource.ConfigFromFile import ConfigFromFile
 from unittest.mock import MagicMock
-from python.src.Display.InputTest import InputTest
-from python.src.Display.OutputTest import OutputTest
-from python.src.DataSource.ReadFileToList import ReadFileToList
-from python.src.Engine.RockPaperScissors import RockPaperScissors
+from src.Display.InputTest import InputTest
+from src.Display.OutputTest import OutputTest
+from src.DataSource.ReadFileToList import ReadFileToList
+from src.Engine.RockPaperScissors import RockPaperScissors
 
 class RockTest(unittest.TestCase):
 
