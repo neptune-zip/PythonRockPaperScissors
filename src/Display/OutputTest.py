@@ -4,8 +4,8 @@ class OutputTest(Output):
 
     outputlist = []
 
-    def setOutputList(self,outputList):
-        self.outputlist = outputList
+    def set_output_list(self, output_list):
+        self.outputlist = output_list
 
     def print(self, request):
         self.outputlist.append(request)

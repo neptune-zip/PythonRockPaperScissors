@@ -3,11 +3,11 @@ from src.DataSource.WriteToFile import WriteToFile
 
 class InputConsole(Input):
 
-    writeToFile = True
-    userInputWriteToFile = WriteToFile("userInputLog.csv")
+    write_to_file = True
+    user_input_write_to_file = WriteToFile("user_input_log.csv")
 
-    def getInputString(self, request):
-        userInput = input(request)
-        if self.writeToFile:
-            self.userInputWriteToFile.writeToFile(userInput)
-        return userInput
+    def get_input_string(self, request):
+        user_input = input(request)
+        if self.write_to_file:
+            self.user_input_write_to_file.write_to_file(user_input)
+        return user_input

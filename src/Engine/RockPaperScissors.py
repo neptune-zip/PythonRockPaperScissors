@@ -6,30 +6,30 @@ from src.Display.InputRandom import InputRandom
 
 class RockPaperScissors:
 
-    userInput = InputConsole()
-    userOutput = OutputConsole()
-    computerInput = InputRandom()
+    user_input = InputConsole()
+    user_output = OutputConsole()
+    computer_input = InputRandom()
     config = None
     property = None
 
-    def __init__(self,config=ConfigFromFile()):
+    def __init__(self, config=ConfigFromFile()):
         self.config = config
-        self.property = config.getConfig()
+        self.property = config.get_config()
 
-    def setUserInput(self,userInput):
-        self.userInput = userInput
+    def set_user_input(self, user_input):
+        self.user_input = user_input
 
-    def setComputerInput(self,computerInput):
-        self.computerInput = computerInput
+    def set_computer_input(self, computer_input):
+        self.computer_input = computer_input
 
-    def setUserOutput (self,userOutput):
-        self.userOutput = userOutput
+    def set_user_output (self, user_output):
+        self.user_output = user_output
 
-    def setConfig(self,config):
+    def set_config(self, config):
         self.config = config
-        self.property = config.getConfig()
+        self.property = config.get_config()
 
-    def determineWinner(self,player,computer):
+    def determine_winner(self, player, computer):
         if player == computer:
             result = "Draw"
         elif (player + 1)%3 == computer:
@@ -38,67 +38,67 @@ class RockPaperScissors:
             result = "Computer Wins"
         return result
 
-    def getUserChoiceRequest(self,weapons):
+    def get_user_choice_request(self, weapons):
         request = "Select "
         for counter in range(len(weapons)):
             request += str(counter) + " for " + weapons[counter] + " "
         return request
 
-    def getUserChoice(self,weapons):
-        request = self.getUserChoiceRequest(weapons)
-        player = self.userInput.getInputInt(request)
-        if player in [0,1,2]:
-            self.userOutput.print("You selected " + weapons[player])
+    def get_user_choice(self, weapons):
+        request = self.get_user_choice_request(weapons)
+        player = self.user_input.get_input_int(request)
+        if player in [0, 1, 2]:
+            self.user_output.print("You selected " + weapons[player])
         return player
 
-    def getComputerChoice(self, weapons):
-        chosen = self.computerInput.getInputInt("")
-        self.userOutput.print("Computer chose " + weapons[chosen])
+    def get_computer_choice(self, weapons):
+        chosen = self.computer_input.get_input_int("")
+        self.user_output.print("Computer chose " + weapons[chosen])
         return chosen
 
-    def setProperty(self):
+    def set_property(self):
         if self.property == []:
-            self.property = self.config.getConfig()
+            self.property = self.config.get_config()
 
-    def getListOfGames(self):
-        self.setProperty()
-        listOfGames = []
-        for counter in range(1,len(self.property)):
-            listOfGames.append(self.property[counter].split(":")[0])
-        return listOfGames
+    def get_list_of_games(self):
+        self.set_property()
+        list_of_games = []
+        for counter in range(1, len(self.property)):
+            list_of_games.append(self.property[counter].split(":")[0])
+        return list_of_games
 
-    def getWeaponLists(self):
-        self.setProperty()
-        weaponLists = []
-        for counter in range(1,len(self.property)):
-            weaponLists.append(self.property[counter].split(":")[1].split(","))
-        return weaponLists
+    def get_weapon_lists(self):
+        self.set_property()
+        weapon_lists = []
+        for counter in range(1, len(self.property)):
+            weapon_lists.append(self.property[counter].split(":")[1].split(", "))
+        return weapon_lists
 
-    def getGamesRequest(self,listOfGames):
+    def get_games_request(self, list_of_games):
         request = "Please select"
-        for counter in range(len(listOfGames)):
-            request += " " + str(counter) + " - " + listOfGames[counter]
+        for counter in range(len(list_of_games)):
+            request += " " + str(counter) + " - " + list_of_games[counter]
         return request
 
-    def generateGamesListRequest(self):
-        listOfGames = self.getListOfGames()
-        request = self.getGamesRequest(listOfGames)
+    def generate_games_list_request(self):
+        list_of_games = self.get_list_of_games()
+        request = self.get_games_request(list_of_games)
         return request
 
-    def getGame(self):
-        request = self.generateGamesListRequest()
-        userGame = self.userInput.getInputInt(request)
-        weaponsLists = self.getWeaponLists()
-        return weaponsLists[userGame]
+    def get_game(self):
+        request = self.generate_games_list_request()
+        user_game = self.user_input.get_input_int(request)
+        weapons_lists = self.get_weapon_lists()
+        return weapons_lists[user_game]
 
     def play(self):
-        weapon = self.getGame()
-        player = self.getUserChoice(weapon)
-        while player in [0,1,2]:
-            computer = self.getComputerChoice(weapon)
-            result = self.determineWinner(player,computer)
-            self.userOutput.print(result)
-            player = self.getUserChoice(weapon)
+        weapon = self.get_game()
+        player = self.get_user_choice(weapon)
+        while player in [0, 1, 2]:
+            computer = self.get_computer_choice(weapon)
+            result = self.determine_winner(player, computer)
+            self.user_output.print(result)
+            player = self.get_user_choice(weapon)
 
 def main():
     rock = RockPaperScissors()

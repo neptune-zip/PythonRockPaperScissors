@@ -2,9 +2,9 @@ from src.DataSource.Config import Config
 
 class ConfigFromStub(Config):
 
-    def getConfig(self):
-        propertyData = []
-        propertyData.append("Name,First,Second,Third")
-        propertyData.append("Rock Paper Scissors:Rock,Scissors,Paper")
-        propertyData.append("Star Wars:Darth Vadar,Emperor,Luke Skywalker")
-        return propertyData
+    def get_config(self):
+        property_data = []
+        property_data.append("Name, First, Second, Third")
+        property_data.append("Rock Paper Scissors:Rock, Scissors, Paper")
+        property_data.append("Star Wars:Darth Vadar, Emperor, Luke Skywalker")
+        return property_data

@@ -4,16 +4,16 @@ import os
 
 class ConfigFromFile(Config):
 
-    def fixWorkingDirectory(self):
-        currentWorkingDirectory = os.getcwd()
-        while "test" in currentWorkingDirectory or "src" in currentWorkingDirectory:
+    def fix_working_directory(self):
+        current_working_directory = os.getcwd()
+        while "test" in current_working_directory or "src" in current_working_directory:
             os.chdir("../")
-            currentWorkingDirectory = os.getcwd()
+            current_working_directory = os.getcwd()
 
-    def getConfig(self):
-        self.fixWorkingDirectory()
-        configPath = RockConstants.filePrefix + "Config/properties.cfg"
-        propertyFile = open(configPath,"r")
-        propertyData = propertyFile.read().splitlines()
-        propertyFile.close()
-        return propertyData
+    def get_config(self):
+        self.fix_working_directory()
+        config_path = RockConstants.file_prefix + "Config/properties.cfg"
+        property_file = open(config_path, "r")
+        property_data = property_file.read().splitlines()
+        property_file.close()
+        return property_data

@@ -1,18 +1,18 @@
 from src.DataSource.RockConstants import RockConstants
 class ReadFileToList:
 
-    filePath = RockConstants.filePrefix + "log/"
+    file_path = RockConstants.file_prefix + "log/"
 
-    def getFileRows(self,fileName):
-        file = open(self.filePath + fileName, "r")
-        fileRows = file.read().splitlines()
+    def get_file_rows(self, file_name):
+        file = open(self.file_path + file_name, "r")
+        file_rows = file.read().splitlines()
         file.close()
-        return fileRows
+        return file_rows
 
-    def getList(self,fileName):
-        fileRows = self.getFileRows(fileName)
-        fileList = []
-        for fileRow in fileRows:
-            if len(fileRow) > 0:
-                fileList.append(fileRow)
-        return fileList
+    def get_list(self, file_name):
+        file_rows = self.get_file_rows(file_name)
+        file_list = []
+        for file_row in file_rows:
+            if len(file_row) > 0:
+                file_list.append(file_row)
+        return file_list

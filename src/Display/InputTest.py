@@ -2,8 +2,8 @@ from src.Display.Input import Input
 
 class InputTest(Input):
 
-    inputList = []
+    input_list = []
 
-    def getInputString(self, request):
-        return self.inputList.pop(0)
+    def get_input_string(self, request):
+        return self.input_list.pop(0)
 
