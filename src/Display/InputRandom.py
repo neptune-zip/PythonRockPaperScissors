@@ -5,10 +5,10 @@ from src.DataSource.WriteToFile import WriteToFile
 class InputRandom(Input):
 
     write_to_file = True
-    input_write_to_file = WriteToFile("computer_input_log.csv")
+    input_write_to_file = WriteToFile("computerInputLog.csv")
 
     def get_input_string(self, request):
-        return get_input_int
+        return self.get_input_int()
 
     def get_input_int(self, request):
         rand = randint(0, 2)

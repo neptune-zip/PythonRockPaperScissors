@@ -4,7 +4,7 @@ from src.DataSource.WriteToFile import WriteToFile
 class OutputConsole(Output):
 
     write_to_file = True
-    output_write_to_file = WriteToFile("user_output_log.csv")
+    output_write_to_file = WriteToFile("userOutputLog.csv")
 
     def print(self, output):
         if self.write_to_file:

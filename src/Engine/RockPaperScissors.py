@@ -71,7 +71,7 @@ class RockPaperScissors:
         self.set_property()
         weapon_lists = []
         for counter in range(1, len(self.property)):
-            weapon_lists.append(self.property[counter].split(":")[1].split(", "))
+            weapon_lists.append(self.property[counter].split(":")[1].split(","))
         return weapon_lists
 
     def get_games_request(self, list_of_games):

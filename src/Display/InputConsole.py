@@ -4,7 +4,7 @@ from src.DataSource.WriteToFile import WriteToFile
 class InputConsole(Input):
 
     write_to_file = True
-    user_input_write_to_file = WriteToFile("user_input_log.csv")
+    user_input_write_to_file = WriteToFile("userInputLog.csv")
 
     def get_input_string(self, request):
         user_input = input(request)
