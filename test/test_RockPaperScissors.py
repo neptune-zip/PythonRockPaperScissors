@@ -10,4 +10,4 @@ class RockPaperScissorTest(unittest.TestCase):
 
 
     def test_get_user_choice_request(self):
-        self.assertEqual()
+        self.assertEqual("Select 0 for Rock 1 for Paper 2 for Scissors ", self.rock.get_user_choice_request(["Rock","Paper","Scissors"]))
