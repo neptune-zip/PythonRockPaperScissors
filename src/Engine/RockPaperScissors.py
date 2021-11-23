@@ -1,8 +1,8 @@
-from random import randint
-from src.Display.InputConsole import InputConsole
-from src.Display.OutputConsole import OutputConsole
-from src.DataSource.ConfigFromFile import ConfigFromFile
 from src.Display.InputRandom import InputRandom
+from src.DataSource.ConfigFromFile import ConfigFromFile
+from src.Display.OutputConsole import OutputConsole
+from src.Display.InputConsole import InputConsole
+from random import randint
 
 class RockPaperScissors:
 
@@ -22,7 +22,7 @@ class RockPaperScissors:
     def set_computer_input(self, computer_input):
         self.computer_input = computer_input
 
-    def set_user_output (self, user_output):
+    def set_user_output(self, user_output):
         self.user_output = user_output
 
     def set_config(self, config):
@@ -32,9 +32,9 @@ class RockPaperScissors:
     def determine_winner(self, player, computer):
         if player == computer:
             result = "Draw"
-        elif (player + 1)%3 == computer:
+        elif (player + 1) % 3 == computer:
             result = "Player wins"
-        elif (computer + 1)%3 == player:
+        elif (computer + 1) % 3 == player:
             result = "Computer Wins"
         return result
 
@@ -71,7 +71,8 @@ class RockPaperScissors:
         self.set_property()
         weapon_lists = []
         for counter in range(1, len(self.property)):
-            weapon_lists.append(self.property[counter].split(":")[1].split(","))
+            weapon_lists.append(
+                self.property[counter].split(":")[1].split(","))
         return weapon_lists
 
     def get_games_request(self, list_of_games):
@@ -100,13 +101,11 @@ class RockPaperScissors:
             self.user_output.print(result)
             player = self.get_user_choice(weapon)
 
+
 def main():
     rock = RockPaperScissors()
     rock.play()
 
+
 if __name__ == "__main__":
     main()
-
-
-
-
